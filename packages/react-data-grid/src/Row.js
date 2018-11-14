@@ -176,8 +176,6 @@ class Row extends React.Component {
       height: this.getRowHeight(this.props),
       overflow: 'hidden'
     };
-
-    let cells = this.getCells();
     return (
       <div
         {...this.getKnownDivProps()}
@@ -188,8 +186,7 @@ class Row extends React.Component {
         onDrop={this.handleDrop}
       >
         {
-          React.isValidElement(this.props.row) ?
-            this.props.row : cells
+          this.getCells()
         }
       </div >
     );
